@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path,include
 
 urlpatterns = [
+    path("", include("frontend.urls")),
+    path("", include("softomatic.urls")),
     path('admin/', admin.site.urls),
-    path("", include("softomatic.urls")), #connecting the urls with the urls in softomatic "app" file
+
 ]

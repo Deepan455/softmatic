@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'softomatic',
+    'frontend',
     'rest_framework'
 ]
 

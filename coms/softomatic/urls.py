@@ -1,17 +1,14 @@
-from django.urls import path
-from . import views
+import rest_framework
 
-urlpatterns = [
-    path("", views.index,name="index"), #Basic front view
-    path("view", views.apiview, name="api_view"),
-    path("material", views.materiallist, name="materail"),
 
-    #For Company
-    path("company/view/<str:name>", views.company_view, name="company_view"),
-    path("company/create", views.company_create, name="company_create"),
-    path("company/update", views.company_update, name="company_update"),
-    path("company/delete/<str:name>", views.company_delete, name="company_delete"),
+from rest_framework import routers, urlpatterns 
+from .api import *
 
-    #For Materials
+router = routers.DefaultRouter()
+router.register('api/company', CompanyViewset, 'companies')
+router.register('api/material', MaterialViewset, 'materials')
+router.register('api/product', ProductViewset, 'products')
+router.register('api/order', OrderViewset, 'orders')
 
-]
+
+urlpatterns = router.urls

@@ -10,6 +10,7 @@ class Company(models.Model):
     email = models.EmailField()
     admins = models.ManyToManyField("User", related_name="admins", blank=True)
     personnels = models.ManyToManyField("User", blank=True)
+    materials  = models.ManyToManyField("Material", related_name = "mat_in_comp", blank=True)
 
     def __str__(self):
         return self.name
@@ -27,9 +28,9 @@ class Product(models.Model):
     name = models.CharField(max_length = 200, unique=True)
     item_code = models.CharField(max_length = 20, unique=True)
     weight = models.FloatField()
-    dimensions = models.CharField(max_length = 20)
+    dimensions = models.CharField(max_length = 100)
     materials = models.ManyToManyField("Material", through='RequiredMaterial')
-    quantity = models.FloatField()
+    quantity = models.FloatField(blank = True, null = True)
 
     def __str__(self):
         return self.name
