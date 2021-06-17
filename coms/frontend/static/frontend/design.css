@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap');
+:root{
+    --primary: #084c69;
+    --secondary: rgb(106, 190, 157);
+    --background:  #c7dfff;
+    --dark: rgb(99, 97, 97);
+    --danger: #ad0d0d;
+    --one: #c7ffca;
+    --two: #c7dfff;
+    --three: #ffc7ff73;
+    --four: #fff9c7;
+    --five: #c7ffe8;
+    --onec: #084c69;
+    --twoc: #084c69;
+    --threec: #084c69;
+    --fourc: #084c69;
+    --fivec: #084c69;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Baloo Tammudu 2', cursive;
+    font-weight: 800;
+}
+
+.cardbox{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid black;
+    flex-wrap: wrap;
+    background: var(--background);
+}
+
+.card{
+    height: 250px;
+    width: 180px;
+    padding: 5px;
+    margin: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    color: var(--primary);
+    background: var(--background);
+    border-radius: 0%;
+}
+
+.card_title{
+    font-size: 28;
+}
+
+.card_warning{
+    width:100%;
+    text-align: center;
+    background: var(--three);
+    color: var(--danger);
+}
+/*
+.card:nth-child(1){
+    background: var(--one);
+    color: var(--onec);
+}
+
+.card:nth-child(2){
+    background: var(--two);
+    color: var(--twoc);
+}
+
+.card:nth-child(3){
+    background: var(--three);
+    color: var(--threec);
+}
+
+.card:nth-child(4){
+    background: var(--four);
+    color: var(--fourc);
+}
+
+.card:nth-child(5){
+    background: var(--five);
+    color: var(--fivec);
+}
+*/
+
+.shadow{
+	transition: 1.2s;
+	box-shadow:inset 3px 3px 6px #bbb,inset -3px -3px 6px #fff,0px 0px 6px rgba(0,0,0,0), 0px 0px 6px rgba(0,0,0,0);
+}
+
+.shadow:hover{
+	box-shadow:inset 0px 0px 6px rgba(0,0,0,0),inset 0px 0px 6px rgba(0,0,0,0),3px 3px 6px #bbb, -3px -3px 6px #fff;
+}
+
+th{
+    background-color: var(--five);
+}
+
+th,td{
+    padding:10px 20px;
+    border-radius: 5px;
+}
+
+table{
+    border-spacing: 20px;
+}
+
+.formfield{
+    padding:10px;
+}
+
+.submit{
+    padding:3px 20px;
+}

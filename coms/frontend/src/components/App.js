@@ -1,18 +1,20 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import {render} from "react-dom";
+import { Dashboard } from './layout/Dashboard';
+import {Provider} from 'react-redux';
+import store from './store';
 
 export class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-
-        }
-    }
+    
     render() {
         return (
-            <div>
-                Hello all
-            </div>
+            <Provider store = {store}>
+                <Fragment>
+                    <div>
+                        <Dashboard/>
+                    </div>
+                </Fragment>
+            </Provider>
         )
     }
 }
