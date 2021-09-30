@@ -1,26 +1,26 @@
 import axios from 'axios';
-import { ADD_MATERIAL, DELETE_MATERIAL, GET_MATERIAL, APPEND_MATERIAL } from "./types";
+import { ADD_ORDER, DELETE_ORDER, GET_ORDER, APPEND_ORDER } from "./types";
 import { tokenConfig } from './auth';
 
-export const getMaterials = () => (dispatch, getState) =>{
+export const getOrders = () => (dispatch, getState) =>{
     console.log("BEfore request");
-    axios.get('api/material', tokenConfig(getState))
+    axios.get('api/order', tokenConfig(getState))
         .then(res => {
             console.log(res.data);
             dispatch({
-                type: GET_MATERIAL,
+                type: GET_ORDER,
                 payload: res.data
             });
         }) 
         .catch(err => console.log(err));
 };
 
-export const addMaterial = (material) => (dispatch, getState) => {
-    axios.post('api/material/',material, tokenConfig(getState))
+export const addOrder = (order) => (dispatch, getState) => {
+    axios.post('api/order/',order, tokenConfig(getState))
         .then((res) => {
             console.log(res.data);
             dispatch({
-                type: ADD_MATERIAL,
+                type: ADD_ORDER,
                 payload: res.data
             });
         })
@@ -38,12 +38,12 @@ export const addMaterial = (material) => (dispatch, getState) => {
         });
 }
 
-export const appendMaterial = (material) => (dispatch, getState) => {
-    console.log(material.id);
-    axios.put(`api/material/${material.id}/`,material,tokenConfig(getState))
+export const appendOrder = (order) => (dispatch, getState) => {
+    console.log(order.id);
+    axios.put(`api/product/${order.id}/`,order,tokenConfig(getState))
         .then((res) => {
             dispatch({
-                type: APPEND_MATERIAL,
+                type: APPEND_ORDER,
                 payload: res.data
             });
         })
@@ -62,13 +62,13 @@ export const appendMaterial = (material) => (dispatch, getState) => {
         });
 }
 
-export const deleteMaterial = (id) => (dispatch, getState) => {
-    axios.delete(`api/material/${id}`, tokenConfig(getState))
+export const deleteOrder = (id) => (dispatch, getState) => {
+    axios.delete(`api/order/${id}`, tokenConfig(getState))
         .then((res) => {
             console.log("deleted");
             console.log(res.data);
             dispatch({
-                type: DELETE_MATERIAL,
+                type: DELETE_ORDER,
                 payload: id
             });
         })

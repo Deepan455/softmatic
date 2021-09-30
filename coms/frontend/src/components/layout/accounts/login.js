@@ -19,7 +19,6 @@ export class Login extends Component {
 
     onSubmit = e => {
         e.preventDefault();
-        console.log("going on");
         this.props.login(this.state.username,
           this.state.password);
     };
@@ -33,9 +32,9 @@ export class Login extends Component {
 
         const { username, password} = this.state
         return (
-            <div className="col-md-6 m-auto">
-        <div className="card card-body mt-5">
-          <h2 className="text-center">Login</h2>
+            <div className="">
+        <div className="shadow login">
+          <h2 className="">Login</h2>
           <form onSubmit={this.onSubmit}>
             <div className="form-group">
               <label>Username</label>

@@ -6,7 +6,7 @@
     --dark: rgb(99, 97, 97);
     --danger: #ad0d0d;
     --one: #c7ffca;
-    --two: #c7dfff;
+    --two: #99c2f8;
     --three: #ffc7ff73;
     --four: #fff9c7;
     --five: #c7ffe8;
@@ -47,7 +47,7 @@
     flex-direction: column;
     color: var(--primary);
     background: var(--background);
-    border-radius: 0%;
+    border-radius: 10px;
 }
 
 .card_title{
@@ -88,21 +88,35 @@
 */
 
 .shadow{
-	transition: 1.2s;
+	transition: 0.8s;
 	box-shadow:inset 3px 3px 6px #bbb,inset -3px -3px 6px #fff,0px 0px 6px rgba(0,0,0,0), 0px 0px 6px rgba(0,0,0,0);
 }
 
-.shadow:hover{
+.shadow_hover:hover{
 	box-shadow:inset 0px 0px 6px rgba(0,0,0,0),inset 0px 0px 6px rgba(0,0,0,0),3px 3px 6px #bbb, -3px -3px 6px #fff;
 }
 
+.shadow_out{
+    box-shadow:inset 0px 0px 6px rgba(0,0,0,0),inset 0px 0px 6px rgba(0,0,0,0),3px 3px 6px #bbb, -3px -3px 6px #fff;
+    transition: 0.8s;
+}
+
+.shadow_out_hover:hover{
+	box-shadow:inset 3px 3px 6px #bbb,inset -3px -3px 6px #fff,0px 0px 6px rgba(0,0,0,0), 0px 0px 6px rgba(0,0,0,0);
+}
+
 th{
-    background-color: var(--five);
+    background-color: var(--two);
 }
 
 th,td{
     padding:10px 20px;
     border-radius: 5px;
+}
+
+.action{
+    padding:none;
+    color:red;
 }
 
 table{
@@ -113,6 +127,50 @@ table{
     padding:10px;
 }
 
+button{
+    color: var(--primary);
+    background: var(--background);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    
+}
+
 .submit{
-    padding:3px 20px;
+    margin: 15px;
+    color: var(--primary);
+    background: var(--background);
+    border: none;
+
+}
+
+select, input, input:active, input:focus{
+    border:none;
+    outline: none;
+    padding: 15px;
+    width: 30%;
+    margin-right: 10px;
+    background: var(--background);
+    border-radius: 10px;
+}
+
+label{
+    display: inline-block;
+    min-width: 200px;
+    padding: 20px;
+}
+
+.logout{
+    position: fixed;
+    border: 1px solid var(--primary);
+}
+
+.logout:hover{
+    box-shadow: 3px 3px 6px #bbb, -3px -3px 6px #fff;
+}
+
+.login{
+    padding-left: 5%;
+    padding-top: 5%;
+    padding: 10px;
 }
